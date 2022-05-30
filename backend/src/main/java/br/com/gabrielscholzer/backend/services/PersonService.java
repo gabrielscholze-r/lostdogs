@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PersonService {
@@ -22,5 +24,12 @@ public class PersonService {
     }
     public List<Person> findAll(){
         return personRepository.findAll();
+    }
+    public Optional<Person> findByID(UUID id){
+        return personRepository.findById(id);
+    }
+    @Transactional
+    public void delete(Person person){
+        personRepository.delete(person);
     }
 }
