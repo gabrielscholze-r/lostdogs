@@ -1,0 +1,50 @@
+.Homepage{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.navigation-buttons{
+    margin: auto;
+    width: max-content;
+    justify-content: center;
+    text-align: center;
+}
+.register-button{
+    filter: drop-shadow(2px 2px 1px black);
+    font-size: 1.5rem;
+    width: fit-content;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.register-button:hover{
+    opacity: 0.8;
+}
+.dogr-logo{
+    width: 25rem;
+}
+.login-button{
+    outline: 0;
+    border: 0;
+    font-weight: 300;
+    padding: 0.75rem 2rem;
+    border-radius: 1.2rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.login-button:hover{
+    opacity: 0.7;
+}
+.login-button:focus{
+    outline: 0;
+}
+.description{
+    margin: auto;
+    width: 50%;
+    color: #EFEAD8;
+}
+.description h3{
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 1px black);
+}
