@@ -1,5 +1,6 @@
 package br.com.gabrielscholzer.backend.models;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.security.MessageDigest;
@@ -9,10 +10,11 @@ import java.util.UUID;
 @Table(name= "TB_PERSON")
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+    @Column(nullable = false, unique = true)
+    private String email;
     @Column(nullable = false)
     private String userName;
     @Column(nullable = false)
@@ -22,6 +24,14 @@ public class Person implements Serializable {
 
     public UUID getId() {
         return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setId(UUID id) {
@@ -34,16 +44,6 @@ public class Person implements Serializable {
 
     public void setUserName(String userName) {
         this.userName  = userName;
-    }
-    public static String gerarHash(String senha) throws Exception {
-        MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
-        byte hash[] = algorithm.digest(senha.getBytes("UTF-8"));
-
-        StringBuilder texto = new StringBuilder();
-        for (byte b : hash) {
-            texto.append(String.format("%02X", 0xFF & b));
-        }
-        return texto.toString();
     }
 
     public String getPhone() {
@@ -58,8 +58,8 @@ public class Person implements Serializable {
         return password;
     }
 
-    public void setPassword(String password) throws Exception {
-        this.password = gerarHash(password);
+    public void setPassword(String password){
+        this.password = password;
     }
 
 }

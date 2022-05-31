@@ -7,12 +7,23 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PersonDTO {
+
     @NotBlank
     private String userName;
+    @NotBlank
+    private String email;
     @NotBlank
     private String phone;
     @NotBlank
     private String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getUserName() {
         return userName;
