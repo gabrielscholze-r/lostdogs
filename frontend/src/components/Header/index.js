@@ -4,7 +4,7 @@ import './index.css'
 function Header() {
   return (
     <header class="header-component">
-        <img src={logo} alt="dogr-logo"/>
+        <img src={logo} alt="dogr-logo" className="dogr-logo"/>
     </header>
     );
 }
