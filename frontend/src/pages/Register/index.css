@@ -1,0 +1,59 @@
+.Register{
+    width: 50%;
+    margin: auto;
+    display: grid;
+}
+.text-input-register{
+    height: fit-content;
+    box-shadow: 3px 3px 3px;
+    padding: 0.5rem;
+    border: 0;
+    background-color: aliceblue;
+    outline: 0;
+    border-radius: 1rem;
+    transition: 0.2s ease;
+}
+.text-input::placeholder{
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.text-input:focus::placeholder{
+    color: transparent;
+}
+.text-input:hover{
+    background-color: rgb(211, 250, 250);
+    color: rgb(32, 32, 32);
+}
+#login-title{
+    margin-top: 2.2rem;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+    filter: drop-shadow(2px 2px 0px black);
+}
+.create-account-button{
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5rem;
+    width: max-content;
+    margin: auto;
+    margin:1px auto;
+    background-color: white;
+    box-shadow: 3px 3px 3px;
+    border: 0;
+    outline: 0;
+}
+.create-account-button:focus{
+    outline: 0;
+}
+.create-account-button:hover{
+    margin:0 auto;
+    border: 1px solid black;
+}
+#login-title{
+    margin-top: 2.2rem;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+    filter: drop-shadow(2px 2px 0px black);
+}
