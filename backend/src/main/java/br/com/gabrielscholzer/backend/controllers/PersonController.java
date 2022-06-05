@@ -1,7 +1,7 @@
 package br.com.gabrielscholzer.backend.controllers;
 
+import br.com.gabrielscholzer.backend.DTOs.LoginDTO;
 import br.com.gabrielscholzer.backend.DTOs.PersonDTO;
-import br.com.gabrielscholzer.backend.models.LoginForm;
 import br.com.gabrielscholzer.backend.models.Person;
 import br.com.gabrielscholzer.backend.services.PersonService;
 import org.springframework.beans.BeanUtils;
@@ -48,7 +48,7 @@ public class PersonController {
 //        return ResponseEntity.status(HttpStatus.OK).body(PersonOptional.get());
 //    }
     @GetMapping("/auth")
-    public ResponseEntity<Object> authenticate(@RequestBody @Valid LoginForm loginForm) throws Exception {
+    public ResponseEntity<Object> authenticate(@RequestBody @Valid LoginDTO loginForm) throws Exception {
         Optional<Person> PersonOptional = personService.findByEmail(loginForm.getEmail());
         if(!PersonOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");

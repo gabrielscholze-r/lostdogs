@@ -1,7 +1,7 @@
-package br.com.gabrielscholzer.backend.models;
+package br.com.gabrielscholzer.backend.DTOs;
 
 
-public class LoginForm {
+public class LoginDTO {
     private String email;
     private String password;
 
