@@ -27,11 +27,12 @@ public class PersonController {
     @PostMapping
     public ResponseEntity<Object> savePerson(@RequestBody @Valid PersonDTO personDTO) throws Exception {
         if(personService.existsByEmail(personDTO.getEmail())){
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("email already exists");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(false);
         }
         var person = new Person();
         BeanUtils.copyProperties(personDTO, person);
-        return ResponseEntity.status(HttpStatus.CREATED).body(personService.save(person));
+        personService.save(person);
+        return ResponseEntity.status(HttpStatus.CREATED).body(true);
     }
 
     @GetMapping

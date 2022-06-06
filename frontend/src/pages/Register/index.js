@@ -22,12 +22,16 @@ function Register() {
         }
         else{
             const response = await API.post('/person', {
-                name,
+                userName: name,
                 email,
                 phone,
                 password
+            }).catch(e => {
+                setMSG("Email already exists")
+                setEmail("")
+                setEmail2("")
             })
-            console.log(response)
+            // push para homepage
         }
         
     }
@@ -37,13 +41,14 @@ function Register() {
         <div className="Register">
             <Header />
             <h3 id="login-title" className="mb-3">REGISTER</h3>
+            <h4 className='error-message'>{msg}</h4>
             <input type="text" placeholder='Name' className="text-input-register my-2 mt-3" onChange={e => { setName(e.target.value) }} />
-            <input type="text" placeholder='Email' className="text-input-register my-2" onChange={e => { setEmail(e.target.value) }} />
-            <input type="text" placeholder='Confirm Email' className="text-input-register my-2" onChange={e => { setEmail2(e.target.value) }} />
+            <input type="text" placeholder='Email' className="text-input-register my-2" value={email} onChange={e => { setEmail(e.target.value) }} />
+            <input type="text" placeholder='Confirm Email' className="text-input-register my-2" value={email2} onChange={e => { setEmail2(e.target.value) }} />
             <input type="text" placeholder='Phone' className="text-input-register my-2" onChange={e => { setPhone(e.target.value) }} />
-            <input type="text" placeholder='Password' className="text-input-register my-2" onChange={e => { setPassword(e.target.value) }} />
-            <input type="text" placeholder='Confirm Password' className="text-input-register my-2" onChange={e => { setPassword2(e.target.value) }} />
-            <button className="create-account-button px-3 my-2 mb-3">Create Account</button>
+            <input type="password" placeholder='Password' className="text-input-register my-2" onChange={e => { setPassword(e.target.value) }} />
+            <input type="password" placeholder='Confirm Password' className="text-input-register my-2" onChange={e => { setPassword2(e.target.value) }} />
+            <button className="create-account-button px-3 my-2 mb-3" onClick={() => {CreateAccount()}}>Create Account</button>
         </div>
     );
 }
