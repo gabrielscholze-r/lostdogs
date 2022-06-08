@@ -28,7 +28,6 @@
     color: rgb(32, 32, 32);
 }
 #login-title{
-    margin-top: 2.2rem;
     font-size: 3rem;
     font-weight: bolder;
     color: white;
@@ -40,4 +39,21 @@
     color: red;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.151));
 
+}
+.back-button{
+    margin: auto;
+    width: fit-content;
+    outline: 0;
+    border: 0;
+    font-weight: 300;
+    padding: 0.75rem 2rem;
+    border-radius: 1.2rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.back-button:hover{
+    opacity: 0.7;
+}
+.back-button:focus{
+    outline: 0;
 }

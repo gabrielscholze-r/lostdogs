@@ -1,5 +1,5 @@
 .Register{
-    width: 50%;
+    width: 40%;
     margin: auto;
     display: grid;
 }
@@ -24,7 +24,7 @@
     background-color: rgb(211, 250, 250);
     color: rgb(32, 32, 32);
 }
-#login-title{
+#register-title{
     margin-top: 2.2rem;
     font-size: 3rem;
     font-weight: bolder;
@@ -32,9 +32,11 @@
     filter: drop-shadow(2px 2px 0px black);
 }
 .create-account-button{
+    transition: 0.2s;
+    padding: 0.7rem 3rem;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 5rem;
+    border-radius: 1rem;
     width: max-content;
     margin: auto;
     margin:1px auto;
@@ -47,8 +49,7 @@
     outline: 0;
 }
 .create-account-button:hover{
-    margin:0 auto;
-    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.726);
 }
 #login-title{
     margin-top: 2.2rem;
