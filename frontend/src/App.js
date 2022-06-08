@@ -7,7 +7,7 @@ import Homepage from './pages/Homepage';
 import Rotas from './config/routes'
 function App() {
   const [cookies, setCookies] = useCookies(['auth'])
-  // useEffect(()=> {setCookies('log', 0,{path: '/'})},[])
+  useEffect(()=> {setCookies('log', 0,{path: '/'})},[])
   return (
     <div className="App">
       <BrowserRouter>

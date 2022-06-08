@@ -48,13 +48,14 @@ public class PersonController {
 //        }
 //        return ResponseEntity.status(HttpStatus.OK).body(PersonOptional.get());
 //    }
-    @GetMapping("/auth")
-    public ResponseEntity<Object> authenticate(@RequestBody @Valid LoginDTO loginForm) throws Exception {
-        Optional<Person> PersonOptional = personService.findByEmail(loginForm.getEmail());
+    @PostMapping("/auth")
+    public ResponseEntity<Object> authenticate(@RequestParam String email, @RequestParam String password) throws Exception {
+        Optional<Person> PersonOptional = personService.findByEmail(email);
+//        System.out.println(PersonOptional.get().getEmail());
         if(!PersonOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(personService.comparePasswords(loginForm.getPassword(), PersonOptional.get().getPassword()));
+        return ResponseEntity.status(HttpStatus.OK).body(personService.comparePasswords(password, PersonOptional.get().getPassword()));
 //        return personService.comparePasswords(loginForm.getEmail(),loginForm.getPassword());
     }
 

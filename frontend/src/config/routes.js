@@ -5,6 +5,7 @@ import { useCookies } from 'react-cookie';
 import Homepage from '../pages/Homepage';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import MainPage from '../pages/MainPage';
 
 function Rotas() {
     const [cookies, setCookies] = useCookies(['auth'])
@@ -12,7 +13,7 @@ function Rotas() {
         if (c == 1) {
             return (
                 <>
-
+                    <MainPage/>
                 </>
             )
         }
