@@ -1,3 +1,31 @@
 .SideBar{
-    display: grid;
+    border-right: 1px solid white;
+    font-family: Lato, sans-serif;
+    text-align: center;
+    display: block;
+}
+
+.signout-icon{
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+.signout-icon:hover{
+    color: rgba(255, 255, 255, 0.844)
+}
+.signout-container{
+    align-items: center;
+    display: flex;
+}
+.signout-text{
+    
+    transition: 0.2s;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+}
+.signout-text:hover{
+    color: rgba(255, 255, 255, 0.844)
+
 }
