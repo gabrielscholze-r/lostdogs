@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Alert } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import API from '../../config/API'
+import AuthContext from '../../config/auth';
 import './index.css'
 function Login() {
+  const [isLogged, setLogged] = useContext(AuthContext)
   const [cookeis, setCookies] = useCookies(['auth'])
   const [alertMessage, setMessage] = useState("")
   const [email, setEmail] = useState("")
@@ -22,7 +24,10 @@ function Login() {
       }})
       console.log(response)
       if (response.data) {
+        setLogged(true)
         setCookies('log', 1, { path: "/" })
+        history.push('/Home')
+        window.location.reload(false)
       }
       else {
         setCookies('log', 0, { path: "/" })
