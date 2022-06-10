@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
+import Feed from '../../components/Feed';
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
 import AuthContext from '../../config/auth';
@@ -12,14 +13,14 @@ function MainPage() {
     let history = useHistory()
     const [cookie, setCookies] = useCookies(["auth"])
     return (
-        <div className="mainpage">
+        <div>
             <Header />
             <div className="MainPage">
                 <div className='SideMenu-component'>
                     <SideBar/>
                 </div>
                 <div className='Feed-component'>
-                    <button onClick={e => {setLogged(false); setCookies('log', 0, {path:'/'}); history.push('/'); window.location.reload(false) }}>VOLTAR</button>
+                    <Feed/>
                 </div>
             </div>
         </div>

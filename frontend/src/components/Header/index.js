@@ -3,9 +3,9 @@ import logo from '../../assets/dogr-logo.png';
 import './index.css'
 function Header() {
   return (
-    <header class="header-component">
+    <div class="header-component">
         <img src={logo} alt="dogr-logo" className="dogr-logo"/>
-    </header>
+    </div>
     );
 }
 
