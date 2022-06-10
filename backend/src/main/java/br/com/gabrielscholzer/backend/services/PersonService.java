@@ -43,9 +43,7 @@ public class PersonService {
     public Optional<Person> findByID(UUID id){
         return personRepository.findById(id);
     }
-//    public Optional<Person> findByEmail(String email){
-//        return person
-//    }
+
     public boolean existsByEmail(String email){
         return personRepository.existsByEmail(email);
     }

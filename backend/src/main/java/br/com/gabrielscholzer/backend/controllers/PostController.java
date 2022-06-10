@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,17 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("UserNotFound");
         }
         return ResponseEntity.status(HttpStatus.OK).body("Post deleted");
-
+    }
+    @PostMapping("/update")
+    public ResponseEntity<Object> updatePost(@RequestBody @Valid PostDTO postDTO) throws Exception{
+        var post = new Post();
+        BeanUtils.copyProperties(postDTO, post);
+        postService.update(post);
+        return ResponseEntity.status(HttpStatus.CREATED).body(post);
+    }
+    @GetMapping("/commentList")
+    public ResponseEntity<Object> CommentList(@PathVariable(value="id") UUID postID) throws Exception{
+        //GET POST BY ID AND RETURN LIST OF COMMENTS
+        return null;
     }
 }

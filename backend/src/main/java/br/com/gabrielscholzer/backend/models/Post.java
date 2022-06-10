@@ -1,6 +1,7 @@
 package br.com.gabrielscholzer.backend.models;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.*;
@@ -21,6 +22,8 @@ public class Post implements Serializable{
     @Column(nullable = false)
     @Lob
     private byte[] image;
+    @Column(nullable = false)
+    private List<Comment> commentList;
 
     public UUID getId() {
         return id;
@@ -28,6 +31,14 @@ public class Post implements Serializable{
 
     public LocalDate getLocalDate() {
         return localDate;
+    }
+
+    public List<Comment> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<Comment> commentList) {
+        this.commentList = commentList;
     }
 
     public void setLocalDate(LocalDate localDate) {

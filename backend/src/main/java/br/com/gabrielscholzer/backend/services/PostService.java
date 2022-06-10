@@ -23,6 +23,10 @@ public class PostService {
         post.setLocalDate(date);
         return postRepository.save(post);
     }
+
+    public Post update(Post post) throws Exception{
+        return postRepository.save(post);
+    }
     public List<Post> findAll(){return postRepository.findAll();}
 
     public Optional<Post> findByID(UUID id){return postRepository.findById(id);}

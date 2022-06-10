@@ -5,17 +5,9 @@ import javax.persistence.Lob;
 import java.util.UUID;
 
 public class PostDTO {
-    private UUID userID;
     private String content;
     private byte[] image;
-
-    public UUID getUserID() {
-        return userID;
-    }
-
-    public void setUserID(UUID userID) {
-        this.userID = userID;
-    }
+    //coments list
 
     public String getContent() {
         return content;
