@@ -50,11 +50,11 @@ public class PersonService {
     public Optional<Person> findByEmail(String email){
         return personRepository.findByEmail(email);
     }
-    public boolean comparePasswords(String testPassword, String password) throws Exception {
+    public Object comparePasswords(String testPassword, String password, UUID id) throws Exception {
         if(gerarHash(testPassword).equals(password)){
-            return true;
+            return id;
         }
-        return false;
+        return "";
     }
     @Transactional
     public void delete(Person person){

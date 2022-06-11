@@ -24,6 +24,9 @@ public class Post implements Serializable{
     @Column(nullable = false, name = "date")
     private LocalDate localDate;
 
+    @Lob
+    @Column(nullable = false, name = "image")
+    private byte[] image;
 
 //    @Lob
 //    @Column(nullable = false, name = "image")

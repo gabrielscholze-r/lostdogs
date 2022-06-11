@@ -1,5 +1,5 @@
 .SideBar{
-    position: fixed;
+    margin-right: auto;
     border-right: 2px solid white;
     font-family: Lato, sans-serif;
     text-align: center;
@@ -28,7 +28,4 @@
 .signout-text:hover{
     color: rgba(255, 255, 255, 0.709)
 
-}
-.last-opt{
-    padding-bottom: 100rem;
 }

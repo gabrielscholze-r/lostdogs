@@ -5,6 +5,7 @@ import java.util.UUID;
 public class PostDTO {
     private UUID userID;
     private String content;
+    private byte[] image;
     //coments list
 
 

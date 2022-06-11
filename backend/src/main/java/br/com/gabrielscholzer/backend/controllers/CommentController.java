@@ -10,8 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins ="*",maxAge = 3600)
@@ -35,5 +38,9 @@ public class CommentController {
 //        return ResponseEntity.status(HttpStatus.OK).body(personService.findAll());
 //    }
 
+    @GetMapping("comment/post/{id}")
+    public ResponseEntity<List<Comment>> findAllById(@PathVariable(value="id") UUID id){
+        return ResponseEntity.status(HttpStatus.OK).body(commentService.findAllById(id));
+    }
 
 }

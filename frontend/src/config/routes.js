@@ -13,7 +13,7 @@ function Rotas() {
     const [cookies, setCookies] = useCookies(['auth'])
     let history = useHistory()
     function rota(c) {
-        if (isLogged) {
+        if (isLogged!=undefined && isLogged!="") {
             return (
                 <Switch>
                     <Route path="/Home">
@@ -23,8 +23,9 @@ function Rotas() {
             )
         }
         else{
-            if(cookies.log==1){
-                setLogged(true)       
+            if(cookies.log!=undefined && cookies.log!=""){
+                setLogged(cookies.log)
+                history.push('/Home')       
             }
             return (
                 <Switch>

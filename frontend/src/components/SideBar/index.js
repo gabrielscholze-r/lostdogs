@@ -5,15 +5,15 @@ import { UilSignout, UilUser, UilUsersAlt } from '@iconscout/react-unicons'
 function SideBar() {
   return (
     <div className="SideBar">
-      <div className="signout-container px-3 pt-5">
+      <div className="signout-container pt-5">
         <UilUser size="70" className="signout-icon" />
         <label className="signout-text">PROFILE</label>
       </div>
-      <div className="signout-container px-3 mt-1 pt-5">
+      <div className="signout-container  mt-1 pt-5">
         <UilUsersAlt size="70" className="signout-icon" />
         <label className="signout-text">FRIENDS</label>
       </div>
-      <div className="signout-container last-opt  mt-1 px-3 pt-5">
+      <div className="signout-container last-opt  mt-1 pt-5">
         <UilSignout size="70" className="signout-icon" />
         <label className="signout-text">SIGNOUT</label>
       </div>

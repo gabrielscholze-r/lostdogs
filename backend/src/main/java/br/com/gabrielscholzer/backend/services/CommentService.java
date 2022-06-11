@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CommentService {
@@ -24,4 +25,5 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
+    public List<Comment> findAllById(UUID id) { return commentRepository.findAllById(id);}
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
+import CreatePost from '../../components/CreatePost';
 import Feed from '../../components/Feed';
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
@@ -20,6 +21,7 @@ function MainPage() {
                     <SideBar/>
                 </div>
                 <div className='Feed-component'>
+                    <CreatePost/>
                     <Feed/>
                 </div>
             </div>

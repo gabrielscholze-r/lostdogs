@@ -22,15 +22,15 @@ function Login() {
         email,
         password
       }})
-      console.log(response)
-      if (response.data) {
-        setLogged(true)
-        setCookies('log', 1, { path: "/" })
+      if (response.data!="") {
+        setLogged(response.data)
+        setCookies('log', response.data, { path: "/" })
         history.push('/Home')
         window.location.reload(false)
       }
       else {
-        setCookies('log', 0, { path: "/" })
+        setLogged("")
+        setCookies('log', "", { path: "/" })
         setMessage("Password or Email incorrect")
       }
 

@@ -55,7 +55,7 @@ public class PersonController {
         if(!PersonOptional.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(personService.comparePasswords(password, PersonOptional.get().getPassword()));
+        return ResponseEntity.status(HttpStatus.OK).body(personService.comparePasswords(password, PersonOptional.get().getPassword(),PersonOptional.get().getId());
 //        return personService.comparePasswords(loginForm.getEmail(),loginForm.getPassword());
     }
 
