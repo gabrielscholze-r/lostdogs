@@ -19,8 +19,6 @@ public class PostService {
     PostRepository postRepository;
 
     public Post save(Post post) throws Exception{
-        LocalDate date = LocalDate.now();
-        post.setLocalDate(date);
         return postRepository.save(post);
     }
 

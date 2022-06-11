@@ -1,6 +1,10 @@
 package br.com.gabrielscholzer.backend.models;
+import org.hibernate.annotations.Type;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,17 +17,19 @@ public class Post implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "userUID")
     private UUID userID;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "content")
     private String content;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "date")
     private LocalDate localDate;
-    @Column(nullable = false)
-    @Lob
-    private byte[] image;
-    @Column(nullable = false)
-    private List<Comment> commentList;
+
+
+//    @Lob
+//    @Column(nullable = false, name = "image")
+//    private MultipartFile image;
+//    @Column(nullable = false, name = "comments")
+//    private List<Comment> commentList;
 
     public UUID getId() {
         return id;
@@ -31,14 +37,6 @@ public class Post implements Serializable{
 
     public LocalDate getLocalDate() {
         return localDate;
-    }
-
-    public List<Comment> getCommentList() {
-        return commentList;
-    }
-
-    public void setCommentList(List<Comment> commentList) {
-        this.commentList = commentList;
     }
 
     public void setLocalDate(LocalDate localDate) {
@@ -65,11 +63,4 @@ public class Post implements Serializable{
         this.content = content;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
 }
